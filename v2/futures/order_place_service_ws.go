@@ -29,6 +29,8 @@ func NewOrderPlaceWsService(apiKey, secretKey string) (*OrderPlaceWsService, err
 		return nil, err
 	}
 
+	client.SetDebug(true)
+
 	return &OrderPlaceWsService{
 		c:         client,
 		ApiKey:    apiKey,
