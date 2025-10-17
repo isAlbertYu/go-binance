@@ -95,6 +95,11 @@ type Client interface {
 	GetReconnectCount() int64
 	Wait(timeout time.Duration)
 	Close() error
+	SetDebug(debug bool)
+}
+
+func (c *client) SetDebug(debug bool) {
+	c.Debug = debug
 }
 
 // Write sends data into websocket connection
